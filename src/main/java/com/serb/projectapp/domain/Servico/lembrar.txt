@@ -1,0 +1,10 @@
+
+/** Colocar no Controller*/
+@GetMapping("/cliente/{id}")
+public ResponseEntity<Cliente> clienteFindById(@PathVariable("id") Long id){
+    Cliente entity = clienteService.clienteFindById(id);
+    return ResponseEntity.ok(entity);
+}
+
+// Referência
+// https://pt.stackoverflow.com/questions/503329/como-fazer-o-m%C3%A9todo-findbyid-no-spring-boot
