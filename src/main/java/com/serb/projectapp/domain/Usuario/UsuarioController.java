@@ -59,4 +59,9 @@ public class UsuarioController {
         usuarioService.excluir(id);
         return ResponseEntity.ok().build();
     }
+
+    @GetMapping("/{id}")
+    public Optional<UsuarioModel> listarUm(@PathVariable Long id){
+        return usuarioService.findById(id);
+    }
 }
