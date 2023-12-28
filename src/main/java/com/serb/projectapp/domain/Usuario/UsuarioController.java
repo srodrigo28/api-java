@@ -64,4 +64,11 @@ public class UsuarioController {
     public Optional<UsuarioModel> listarUm(@PathVariable Long id){
         return usuarioService.findById(id);
     }
+
+     @PutMapping
+    public UsuarioModel updateAluno(@RequestBody UsuarioModel obj){
+        if(obj.getId() > 0){
+            return usuarioService.save(obj);
+        } return obj;
+    }
 }
