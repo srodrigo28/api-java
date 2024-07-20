@@ -32,11 +32,10 @@ public class UsuarioController {
     }
     
     @GetMapping("/{id}")
-    public ResponseEntity<UsuarioModel> usuarioFindById(@PathVariable("id") Long id){
+    public ResponseEntity<UsuarioModel> usuarioFindById(@PathVariable Long id){
         UsuarioModel usuario = usuarioService.buscaUm(id);
         return ResponseEntity.ok(usuario);
     }
-
 
     @GetMapping("/f")
     public List<UsuarioModel> buscarMulheres(){
@@ -55,20 +54,8 @@ public class UsuarioController {
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<Void> remover(@PathVariable("id")Long id) {
+    public ResponseEntity<Void> remover(@PathVariable Long id) {
         usuarioService.excluir(id);
         return ResponseEntity.ok().build();
-    }
-
-    @GetMapping("/{id}")
-    public Optional<UsuarioModel> listarUm(@PathVariable Long id){
-        return usuarioService.findById(id);
-    }
-
-     @PutMapping
-    public UsuarioModel updateAluno(@RequestBody UsuarioModel obj){
-        if(obj.getId() > 0){
-            return usuarioService.save(obj);
-        } return obj;
     }
 }

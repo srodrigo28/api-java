@@ -27,7 +27,7 @@ public class ServicoController {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<ServicoModel> servicoFindById(@PathVariable("id") Long id){
+    public ResponseEntity<ServicoModel> servicoFindById(@PathVariable Long id){
         ServicoModel servico = servicoService.buscaUm(id);
         return ResponseEntity.ok(servico);
     }
@@ -58,7 +58,7 @@ public class ServicoController {
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<Void> remover(@PathVariable("id")Long id){
+    public ResponseEntity<Void> remover(@PathVariable Long id){
         servicoService.excluir(id);
         return ResponseEntity.ok().build();
     }
