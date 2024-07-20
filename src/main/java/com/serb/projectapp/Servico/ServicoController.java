@@ -1,4 +1,4 @@
-package com.serb.projectapp.domain.Servico;
+package com.serb.projectapp.Servico;
 
 import java.util.List;
 

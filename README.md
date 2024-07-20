@@ -25,3 +25,8 @@ https://pay.kiwify.com.br/mXnHYBK
 * Categoria
 * Servico
 * Usuario
+
+#### tags
+
+git tag v2.0
+git push origin v1.0

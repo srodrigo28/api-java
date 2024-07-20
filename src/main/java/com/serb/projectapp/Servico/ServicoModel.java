@@ -1,4 +1,4 @@
-package com.serb.projectapp.domain.Usuario;
+package com.serb.projectapp.Servico;
 
 import java.util.Date;
 
@@ -12,28 +12,33 @@ import jakarta.persistence.TemporalType;
 import lombok.Data;
 
 @Data
-@Entity(name="tb_usuario")
-public class UsuarioModel {
+@Entity(name="tb_servicos")
+public class ServicoModel {
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @Column(unique = true, nullable = false)
-    private String nome;
+    private String cliente;
 
     @Column(nullable = false)
-    private String telefone;
+    private String descricao;
 
-    @Column(nullable = false)
-    private String sexo;
+    private Double valor;
 
-    @Column(nullable = true)
-    private String cidade;
+    private Double valor_pago;
 
     @Column(nullable = true)
-    private String endereco;
+    private String status; 
+    // orçamento, pago-entregue, aguardando-aprovação, cancelado
 
     @Temporal(TemporalType.TIMESTAMP)
-    private Date data_cadastro = new Date();
+    private Date data_entrada;
+
+    @Temporal(TemporalType.DATE)
+    private Date data_pagamento;
+
+    @Temporal(TemporalType.DATE)
+    private Date data_saida;
 }

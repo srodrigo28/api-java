@@ -1,30 +1,31 @@
-package com.serb.projectapp.domain.Categoria;
+package com.serb.projectapp.Categoria;
 
 import org.springframework.http.ResponseEntity;
-
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
 @RestController
-@RequestMapping("api/categoria")
+@CrossOrigin("*")
 public class CategoriaController {
     
     @Autowired 
     private CategoriaService categoriaService;
 
-    @PostMapping("/")  /*** 1. Cadastrar */
+    @PostMapping("/api/categoria")  /*** 1. Cadastrar */
+    @CrossOrigin("*")
     public CategoriaModel Inserir(@RequestBody CategoriaModel categoria) {
         return categoriaService.Inserir(categoria);
     }
 
-    @GetMapping("/")    /*** 2. Listar Todos */
+    @GetMapping("/api/categoria")    /*** 2. Listar Todos */
+    @CrossOrigin("*")
     public Iterable<CategoriaModel> ListarTodos() {
         return categoriaService.ListarTodos();
     }
@@ -38,7 +39,7 @@ public class CategoriaController {
     }
     */
 
-    @GetMapping("/{id}")
+    @GetMapping("/api/categoria/{id}")
     public CategoriaModel BuscarPorId(@PathVariable Long id) {
         return categoriaService.ListarById(id);
     }
@@ -50,7 +51,7 @@ public class CategoriaController {
     }
     */
 
-    @DeleteMapping("/{id}")
+    @DeleteMapping("/api/categoria/{id}")
     public ResponseEntity<Void> Remover(@PathVariable Long id) {
         categoriaService.Excluir(id);
         return ResponseEntity.ok().build();

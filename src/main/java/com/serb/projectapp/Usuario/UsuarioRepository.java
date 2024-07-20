@@ -1,4 +1,4 @@
-package com.serb.projectapp.domain.Usuario;
+package com.serb.projectapp.Usuario;
 
 import java.util.List;
 

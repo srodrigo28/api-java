@@ -1,4 +1,4 @@
-package com.serb.projectapp.domain.Categoria;
+package com.serb.projectapp.Categoria;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;

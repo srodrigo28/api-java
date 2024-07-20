@@ -1,4 +1,4 @@
-package com.serb.projectapp.domain.Categoria;
+package com.serb.projectapp.Categoria;
 
 import java.util.List;
 
