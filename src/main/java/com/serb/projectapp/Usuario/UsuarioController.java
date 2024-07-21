@@ -19,39 +19,39 @@ public class UsuarioController {
     @Autowired
     private UsuarioService usuarioService;
 
-    @PostMapping("/")
+    @PostMapping("/users")
     public UsuarioModel inserir(@RequestBody UsuarioModel usuario){
         return usuarioService.inserir(usuario);
     }
 
-    @GetMapping("/")
+    @GetMapping("/users")
     public List<UsuarioModel> listarTodos(){
         return usuarioService.buscarTodos();
     }
     
-    @GetMapping("/{id}")
+    @GetMapping("/users/{id}")
     public ResponseEntity<UsuarioModel> usuarioFindById(@PathVariable Long id){
         UsuarioModel usuario = usuarioService.buscaUm(id);
         return ResponseEntity.ok(usuario);
     }
 
-    @GetMapping("/f")
+    @GetMapping("/users/f")
     public List<UsuarioModel> buscarMulheres(){
         return usuarioService.buscarFeminino();
     }
 
-    @GetMapping("/m")
+    @GetMapping("/users/m")
     public List<UsuarioModel> buscarMasculinos(){
         return usuarioService.buscarMasculinos();
     }
 
-    @PutMapping("/")
+    @PutMapping("/users")
     @CrossOrigin("*")
     public UsuarioModel atualizar(@RequestBody UsuarioModel usuario){
         return usuarioService.alterar(usuario);
     }
 
-    @DeleteMapping("/{id}")
+    @DeleteMapping("/users/{id}")
     public ResponseEntity<Void> remover(@PathVariable Long id) {
         usuarioService.excluir(id);
         return ResponseEntity.ok().build();
