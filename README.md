@@ -25,6 +25,7 @@ https://pay.kiwify.com.br/mXnHYBK
 * Categoria
 * Servico
 * Usuario
+* Taxa
 
 #### tags
 
